@@ -1,0 +1,1 @@
+{"name":"Local: labryinth","url":"c:\\Users\\Swayam\\Desktop\\CSES\\Graph\\labryinth.cpp","tests":[{"id":1776178571126,"input":"5 8\n########\n#.A#...#\n#.##.#B#\n#......#\n########","output":"YES\n9\nLDDRRRRRU"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Swayam\\Desktop\\CSES\\Graph\\labryinth.cpp","group":"local","local":true}

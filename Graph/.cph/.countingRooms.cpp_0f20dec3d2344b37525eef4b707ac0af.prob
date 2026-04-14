@@ -1,0 +1,1 @@
+{"name":"Local: countingRooms","url":"c:\\Users\\Swayam\\Desktop\\CSES\\Graph\\countingRooms.cpp","tests":[{"id":1776176398135,"input":"5 8\n########\n#..#...#\n####.#.#\n#..#...#\n########","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Swayam\\Desktop\\CSES\\Graph\\countingRooms.cpp","group":"local","local":true}
