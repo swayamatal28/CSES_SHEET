@@ -111,33 +111,66 @@ int main()
 
     int n,m;cin >> n >> m;
     DSU dsu(n+1);
+    vector<vector<int>> adj(n+1);
     for(int i=0;i<m;i++)
     {
         int a,b;
         cin >> a >> b;
         dsu.unionBySize(a,b);
+        adj[a].push_back(b);
+        adj[b].push_back(a);
     }
-    vector<pair<int,int>> ans;
-    int cnt=0;
-    for(int i=2;i<=n;i++)
+    if(dsu.find(1)!=dsu.find(n)){
+        cout << "IMPOSSIBLE" << endl;
+        return 0;
+    }
+    queue<int> q;
+    q.push(1);
+    int steps=1;
+    int dist;
+    vector<int> vis(n+1,false);
+    vis[1]=true;    
+    vector<int> parent(n+1);
+    parent[1]=-1;
+    bool flag=false;
+    while(!q.empty())
     {
-        int ulpa=dsu.find(i-1);
-        int ulpb=dsu.find(i);
-        if(ulpa==ulpb){
-            continue;
-        }
-        cnt++;
-        ans.push_back({ulpa,ulpb});
-        dsu.unionBySize(ulpa,ulpb);
+        int sz=q.size();
+        while(sz--){
 
+            int node=q.front();
+            q.pop();
+            for(auto val:adj[node]){
+                if(!vis[val])
+                {
+                    parent[val]=node;
+                    q.push(val);
+                    vis[val]=true;
+                    if(val==n){
+                        dist=steps+1;
+                        flag=true;
+                        break;
+                    }
+                }
+            }
+            if(flag) break;
+        }
+        if(flag) break;
+        steps++;
     }
-    cout << cnt << endl;
-    for(auto val:ans)
+    int node=n;
+    vector<int> ans;
+    while(node!=-1)
     {
-        cout << val.first << " " << val.second << endl;
+        ans.push_back(node);
+        node=parent[node];
     }
+    reverse(ans.begin(),ans.end());
+    
+    cout << dist << endl;
+    for(auto val:ans) cout << val << " ";
     cout << endl;
 
 
     return 0;
-}
+}   
