@@ -1,0 +1,1 @@
+{"name":"Local: buildingRoads","url":"c:\\Users\\Swayam\\Desktop\\CSES\\Graph\\buildingRoads.cpp","tests":[{"id":1776585391259,"input":"4 2\n1 2\n3 4","output":"1\n2 3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Swayam\\Desktop\\CSES\\Graph\\buildingRoads.cpp","group":"local","local":true}
